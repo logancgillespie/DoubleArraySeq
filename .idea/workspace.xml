@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a0a15b84-e0e5-4273-8623-e9d57a1b2a62" name="Default" comment="" />
+    <list default="true" id="a0a15b84-e0e5-4273-8623-e9d57a1b2a62" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="DoubleArraySeq.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -67,19 +70,7 @@
       <file leaf-file-name="DoubleArraySeq.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DoubleArraySeq.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="335" column="40" selection-start="11465" selection-end="11465" vertical-scroll-proportion="0.5690897" vertical-offset="7171" max-vertical-offset="13200">
-              <folding>
-                <element signature="e#14290#14291#0" expanded="true" />
-                <element signature="e#14324#14325#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DoubleArraySeq.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Downloads/DoubleArraySeq.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="221" column="6" selection-start="8827" selection-end="9115" vertical-scroll-proportion="0.0" vertical-offset="381" max-vertical-offset="9504">
+            <state line="5" column="75" selection-start="387" selection-end="387" vertical-scroll-proportion="-1.7942333" vertical-offset="1444" max-vertical-offset="5700">
               <folding />
             </state>
           </provider>
@@ -88,7 +79,7 @@
       <file leaf-file-name="DoubleArraySeqTester.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DoubleArraySeqTester.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="690" column="1" selection-start="27335" selection-end="27335" vertical-scroll-proportion="0.0" vertical-offset="15045" max-vertical-offset="16608">
+            <state line="690" column="1" selection-start="27335" selection-end="27335" vertical-scroll-proportion="0.0" vertical-offset="10350" max-vertical-offset="10440">
               <folding />
             </state>
           </provider>
@@ -97,7 +88,7 @@
       <file leaf-file-name="TestDoubleArraySeq.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TestDoubleArraySeq.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="231" column="1" selection-start="8008" selection-end="8008" vertical-scroll-proportion="0.0" vertical-offset="3693" max-vertical-offset="5616">
+            <state line="231" column="1" selection-start="8008" selection-end="8008" vertical-scroll-proportion="0.0" vertical-offset="3465" max-vertical-offset="3555">
               <folding />
             </state>
           </provider>
@@ -110,22 +101,25 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$PROJECT_DIR$/src/DoubleArraySeq.java" />
         <option value="$PROJECT_DIR$/src/DoubleArraySeqTester.java" />
         <option value="$PROJECT_DIR$/src/TestDoubleArraySeq.java" />
-        <option value="$PROJECT_DIR$/src/DoubleArraySeq.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-2" />
-    <option name="y" value="54" />
-    <option name="width" value="3204" />
-    <option name="height" value="1750" />
+    <option name="x" value="20" />
+    <option name="y" value="29" />
+    <option name="width" value="1400" />
+    <option name="height" value="860" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -151,6 +145,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -185,8 +181,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -201,8 +195,6 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/DoubleArraySeq.java" />
-    <property name="SearchEverywhereHistory" value="" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
@@ -365,8 +357,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="54" width="3204" height="1750" extended-state="6" />
-    <editor active="true" />
+    <frame x="20" y="29" width="1400" height="860" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -383,7 +375,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -393,7 +385,7 @@
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USERS">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
       <collection />
     </option>
   </component>
@@ -415,31 +407,21 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/DoubleArraySeq.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="6" selection-start="2301" selection-end="2301" vertical-scroll-proportion="0.0" vertical-offset="1704" max-vertical-offset="10536">
-          <folding>
-            <element signature="e#14290#14291#0" expanded="true" />
-            <element signature="e#14324#14325#0" expanded="true" />
-          </folding>
+        <state line="5" column="75" selection-start="387" selection-end="387" vertical-scroll-proportion="0.0" vertical-offset="1444" max-vertical-offset="5700">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DoubleArraySeqTester.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="690" column="1" selection-start="27335" selection-end="27335" vertical-scroll-proportion="0.0" vertical-offset="16560" max-vertical-offset="16704">
+        <state line="690" column="1" selection-start="27335" selection-end="27335" vertical-scroll-proportion="0.0" vertical-offset="10350" max-vertical-offset="10440">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TestDoubleArraySeq.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="231" column="1" selection-start="8008" selection-end="8008" vertical-scroll-proportion="0.0" vertical-offset="5544" max-vertical-offset="5688">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TestDoubleArraySeq.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="231" column="1" selection-start="8008" selection-end="8008" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3555">
+        <state line="231" column="1" selection-start="8008" selection-end="8008" vertical-scroll-proportion="0.0" vertical-offset="3465" max-vertical-offset="3555">
           <folding />
         </state>
       </provider>
@@ -451,20 +433,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/DoubleArraySeq.java">
+    <entry file="file://$PROJECT_DIR$/src/TestDoubleArraySeq.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="221" column="6" selection-start="8827" selection-end="9115" vertical-scroll-proportion="0.0" vertical-offset="4917" max-vertical-offset="9504">
+        <state line="231" column="1" selection-start="8008" selection-end="8008" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3555">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DoubleArraySeq.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="335" column="40" selection-start="11465" selection-end="11465" vertical-scroll-proportion="0.5690897" vertical-offset="7171" max-vertical-offset="13200">
-          <folding>
-            <element signature="e#14290#14291#0" expanded="true" />
-            <element signature="e#14324#14325#0" expanded="true" />
-          </folding>
+        <state line="5" column="75" selection-start="387" selection-end="387" vertical-scroll-proportion="-1.7942333" vertical-offset="1444" max-vertical-offset="5700">
+          <folding />
         </state>
       </provider>
     </entry>
