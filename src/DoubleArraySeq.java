@@ -58,6 +58,7 @@ public class DoubleArraySeq implements Cloneable {
         if (data.length <= 0 && data.length == DEFAULT_CAPACITY) {
             throw new IllegalStateException();
         }
+        
     }
 
     /**
@@ -107,9 +108,19 @@ public class DoubleArraySeq implements Cloneable {
      * @throws OutOfMemoryError
      *             if there is insufficient memory for the new sequence.
      */
-    public static DoubleArraySeq concatenation(DoubleArraySeq s1,
-                                               DoubleArraySeq s2) throws NullPointerException, OutOfMemoryError {
-
+    //Not positive if we need the throws or not...
+    public static DoubleArraySeq concatenation(DoubleArraySeq s1, DoubleArraySeq s2) 
+                                        throws NullPointerException, OutOfMemoryError {
+        //Throw this I guess??? 
+        if (s1 == null || s2 == null) {
+            throw new NullPointerException(); 
+        } 
+        
+        //Make a new DoubleArraySeq to return 
+        DoubleArraySeq newSeq = new DoubleArraySeq(s1.size() + s2.size());
+        newSeq.addAll(s1); 
+        newSeq.addAll(s2); 
+        return newSeq;
     }
 
     /**
@@ -129,7 +140,7 @@ public class DoubleArraySeq implements Cloneable {
      *                 sequence is now the current element; otherwise, there is
      *                 no current element.
      */
-    public void start() {
+   public void start() {
 
     }
 
@@ -138,10 +149,20 @@ public class DoubleArraySeq implements Cloneable {
      *
      * @precondition isCurrent() returns true.
      *
-     * @return true if there is a current element, or false otherwise.
+     * @return double if there is a current element.
+     *
+     * @throws IllegalStateException - if there is no currentElement
      */
-    public double getCurrent() {
+    
+    //Think the data types are messed up on this one.
+    //TODO: fix or check 
+    public double getCurrent() throws IllegalStateException {
 
+        if (!this.isCurrent()) {
+            throw new IllegalStateException();     
+        } 
+
+        return this.data[currentElement];
     }
 
     /**
@@ -230,7 +251,15 @@ public class DoubleArraySeq implements Cloneable {
      *                element immediately after the original current element.
      */
     public void advance() {
-
+        int newCur = currentElement + 1; 
+        if (this.isCurrent()) {
+            //check to see if old current element is at the end of the array
+            if (newCur > data.length) {
+                this.setNoCurrent();  
+            } else {
+                this.currentElement = newCur; 
+            }
+        }
     }
 
     /**
@@ -315,11 +344,17 @@ public class DoubleArraySeq implements Cloneable {
 
     /**
      * Determines whether this sequence has specified a current element.
+     * Check based off NO_CURRENT.  If it's null or less than 0 no current
+     * element exists
      *
      * @return true if there is a current element, or false otherwise.
      */
     public boolean isCurrent() {
-
+        boolean currentExists = true; 
+        if (NO_CURRENT <= 0) {
+            currentExists = false; 
+        }
+        return currentExists;
     }
 
     /**
@@ -336,6 +371,10 @@ public class DoubleArraySeq implements Cloneable {
      *             if there is no current element.
      */
     public void removeCurrent() {
+
+        if (!this.isCurrent()) {
+            throw new IllegalStateException(); 
+        }
 
     }
 
@@ -371,4 +410,13 @@ public class DoubleArraySeq implements Cloneable {
 
     }
 
+
+    /**
+     * Sets the NO_CURRENT value to indicate that there is there is no 
+     * current value selected.  0 inicates there is no current value.
+     * 
+     */
+    private void setNoCurrent() {
+        this.NO_CURRENT = 0; 
+    }
 }
