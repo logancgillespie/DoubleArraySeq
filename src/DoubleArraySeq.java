@@ -108,7 +108,7 @@ public class DoubleArraySeq implements Cloneable {
      *             if there is insufficient memory for the new sequence.
      */
     public static DoubleArraySeq concatenation(DoubleArraySeq s1,
-                                               DoubleArraySeq s2) {
+                                               DoubleArraySeq s2) throws NullPointerException, OutOfMemoryError {
 
     }
 
