@@ -1,4 +1,4 @@
-import java.util.Arrays;
+//import java.util.Arrays;
 
 /**
  * A DoubleArraySeq keeps track of a sequence of double numbers. The sequence
@@ -67,7 +67,6 @@ public class DoubleArraySeq implements Cloneable {
         if (data.length <= 0 && data.length == DEFAULT_CAPACITY) {
             throw new IllegalStateException();
         }
-        
     }
 
     /**
@@ -94,6 +93,8 @@ public class DoubleArraySeq implements Cloneable {
         if (data.length <= 0 && data.length == DEFAULT_CAPACITY) {
             throw new IllegalStateException();
         }
+        currentElement = 1;
+        manyItems=initialCapacity;
     }
 
     /**
@@ -118,17 +119,17 @@ public class DoubleArraySeq implements Cloneable {
      *             if there is insufficient memory for the new sequence.
      */
     //Not positive if we need the throws or not...
-    public static DoubleArraySeq concatenation(DoubleArraySeq s1, DoubleArraySeq s2) 
-                                        throws NullPointerException, OutOfMemoryError {
+    public static DoubleArraySeq concatenation(DoubleArraySeq s1, DoubleArraySeq s2)
+            throws NullPointerException, OutOfMemoryError {
         //Throw this I guess???
         //Might be an invalid parameter exception
         if (s1 == null || s2 == null) throw new NullPointerException();
 
-        
+
         //Make a new DoubleArraySeq to return 
         DoubleArraySeq newSeq = new DoubleArraySeq(s1.size() + s2.size());
-        newSeq.addAll(s1); 
-        newSeq.addAll(s2); 
+        newSeq.addAll(s1);
+        newSeq.addAll(s2);
         return newSeq;
     }
 
@@ -138,12 +139,7 @@ public class DoubleArraySeq implements Cloneable {
      * @return the number of elements in this sequence
      */
     public int size() {
-        manyItems = 0;
-        for(int i=0; i<data.length; i++) {
-            if (data[i] != 0.0 )
-                manyItems++;
-        }
-        return manyItems;
+        return numElements;
     }
 
     /**
@@ -158,12 +154,14 @@ public class DoubleArraySeq implements Cloneable {
      *
      * @return the new array with increased size
      */
-    private double[] arrayBoost() {
+    private void arrayBoost() {
         int boostFactor = 2;
-        int newSize = data.length * boostFactor;
+        int newSize = data.length * boostFactor + 1;
         double[] tmp = new double[newSize];
-        System.arraycopy(data, 0, tmp, 0, data.length);
+        //System.arraycopy(data, 0, tmp, 0, newSize);
+
         data = tmp;
+        manyItems =manyItems *boostFactor;
     }
 
 
@@ -191,16 +189,16 @@ public class DoubleArraySeq implements Cloneable {
      *
      * @throws IllegalStateException - if there is no currentElement
      */
-    
+
     //Think the data types are messed up on this one.
     //TODO: fix or check 
     public double getCurrent() throws IllegalStateException {
 
         if (!this.isCurrent()) {
-            throw new IllegalStateException();     
-        } 
+            throw new IllegalStateException();
+        }
 
-        return this.data[currentElement];
+        return data[currentElement +1];
     }
 
     /**
@@ -231,12 +229,16 @@ public class DoubleArraySeq implements Cloneable {
         }
 
         //make sure there is room in the data array.
-        if(this.size() == data.length) this.arrayBoost();
+        if(this.size() == data.length){
+            this.arrayBoost();
+        }
 
-        System.arraycopy(data, currentElement, data, currentElement+1, this.size());
+        //System.arraycopy(data, currentElement, data, currentElement+1, this.size());
+        data[numElements]= element;
+
+        numElements++;
+
         //set the current element.
-        currentElement++;
-        data[currentElement] = element;
     }
 
     /**
@@ -265,10 +267,10 @@ public class DoubleArraySeq implements Cloneable {
     //TODO: Make sure the increase array sequence size method doesn't crash or anything
     public void addAll(DoubleArraySeq other) {
         if (other != null) {
-            if (other.size() >= this.data.length || other.data.length >= this.data.length) arrayBoost();
-
-
-
+            //make sure this data array is large enough
+            while (other.size() >= this.data.length || other.data.length >= this.data.length) arrayBoost();
+            System.arraycopy(other.data, 0, this.data, this.size(), other.size());
+            numElements= numElements+other.size();
         } else {
             throw new NullPointerException();
         }
@@ -308,6 +310,7 @@ public class DoubleArraySeq implements Cloneable {
         System.arraycopy(data, currentElement, data, currentElement + 1, this.size());
         //set the current element.
         data[currentElement] = element;
+        numElements++;
     }
 
     /**
@@ -322,13 +325,13 @@ public class DoubleArraySeq implements Cloneable {
      *                element immediately after the original current element.
      */
     public void advance() {
-        int newCur = currentElement + 1; 
+        int newCur = currentElement + 1;
         if (this.isCurrent()) {
             //check to see if old current element is at the end of the array
-            if (newCur > data.length) {
+            if (newCur > data.length-1) {
                 this.NoCurrent();
             } else {
-                this.currentElement = newCur; 
+                this.currentElement = newCur;
             }
         }
     }
@@ -367,13 +370,13 @@ public class DoubleArraySeq implements Cloneable {
      * @throws RuntimeException
      *             if this class does not implement Cloneable.
      */
+    //TODO: implement deep cloning
     protected DoubleArraySeq clone() {
         DoubleArraySeq theCopy = null;
         try {
             theCopy = (DoubleArraySeq) super.clone();
         } catch (CloneNotSupportedException ex) {
             throw new RuntimeException("This class does not implement the Cloneable interface");
-
         }
         return theCopy;
     }
@@ -393,9 +396,21 @@ public class DoubleArraySeq implements Cloneable {
      *             double[minimumCapacity].
      */
     public void ensureCapacity(int minimumCapacity) {
-        if (data.length >= minimumCapacity) {
-            throw new OutOfMemoryError("There is no memory left for a new array");
+        try{
+        if (data.length < minimumCapacity) {
+            double[] tmp = new double[minimumCapacity];
+            System.arraycopy(data, 0, tmp, 0, this.size());
+            data = tmp;
+            manyItems =minimumCapacity;
         }
+        }catch(OutOfMemoryError er){
+            System.out.println(er.getMessage());
+        }
+
+        //}//catch{
+         //   OutOfMemoryError
+
+
     }
 
     /**
@@ -406,12 +421,14 @@ public class DoubleArraySeq implements Cloneable {
      * @return true if this object is equal to the other object, false
      *         otherwise.
      */
-    //TODO: this needs to check the object type
+    //TODO: Compare fields in both objects
     public boolean equals(Object other) {
-        if(data == other){
-            return true;
+        boolean result = false;
+        if (other == null) result = false;
+        if(this.getClass() == other.getClass()){
+            result = true;
         }
-        return false;
+        return result;
     }
 
     /**
@@ -436,10 +453,11 @@ public class DoubleArraySeq implements Cloneable {
      * @return true if there is a current element, or false otherwise.
      */
     public boolean isCurrent() {
-        boolean currentExists = true; 
+        boolean currentExists = true;
         if (NO_CURRENT < 0) {
-            currentExists = false; 
+            currentExists = false;
         }
+
         return currentExists;
     }
 
@@ -457,11 +475,12 @@ public class DoubleArraySeq implements Cloneable {
      *             if there is no current element.
      */
     public void removeCurrent() {
-
         if (!this.isCurrent()) {
-            throw new IllegalStateException(); 
+            throw new IllegalStateException();
         } else {
             System.arraycopy(data,currentElement,data,currentElement-1,currentElement-getCapacity());
+            currentElement = currentElement-1;
+            numElements--;
         }
     }
 
@@ -481,21 +500,22 @@ public class DoubleArraySeq implements Cloneable {
      */
     public String toString() {
         String st ="";
-        if(data == null){
+        if(data == null || numElements ==0){
             st = "<>";
         } else{
-            for(int i =0; i<data.length; i++){
+            st+="<";
+            for(int i =0; i<numElements; i++){
                 if(i == currentElement){
-                    st+= "[" + data[i] + "}";
+                    st+= "[" + data[i] + "]";
                 }
                 else{
-                    st += "<" + data[i] + ">";
-
+                    st +=data[i];
                 }
-                if(i<data.length){
+                if(i<numElements){
                     st += ", ";
                 }
             }
+            st+=">";
         }
         return st;
     }
@@ -513,8 +533,8 @@ public class DoubleArraySeq implements Cloneable {
     public void trimToSize() {
         try{
             //this needs to be fixed
-            double[] datanew = new double[currentElement];
-            System.arraycopy(data,0,datanew,0,currentElement);
+            double[] datanew = new double[this.size()];
+            System.arraycopy(data,0,datanew,0,this.size());
             data = datanew;
         }catch(OutOfMemoryError er){
             System.out.println(er.getMessage());
@@ -524,7 +544,7 @@ public class DoubleArraySeq implements Cloneable {
     /**
      * Sets the NO_CURRENT value to indicate that there is there is no 
      * current value selected.  -1 inicates there is no current value.
-     * 
+     *
      */
     private void NoCurrent() {
         this.NO_CURRENT = -1;
