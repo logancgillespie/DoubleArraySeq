@@ -67,7 +67,19 @@
       <file leaf-file-name="DoubleArraySeq.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DoubleArraySeq.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="6" selection-start="2336" selection-end="2336" vertical-scroll-proportion="1.3994744" vertical-offset="0" max-vertical-offset="5700">
+            <state line="335" column="40" selection-start="11465" selection-end="11465" vertical-scroll-proportion="0.5690897" vertical-offset="7171" max-vertical-offset="13200">
+              <folding>
+                <element signature="e#14290#14291#0" expanded="true" />
+                <element signature="e#14324#14325#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DoubleArraySeq.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Downloads/DoubleArraySeq.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="221" column="6" selection-start="8827" selection-end="9115" vertical-scroll-proportion="0.0" vertical-offset="381" max-vertical-offset="9504">
               <folding />
             </state>
           </provider>
@@ -76,13 +88,8 @@
       <file leaf-file-name="DoubleArraySeqTester.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DoubleArraySeqTester.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="690" column="1" selection-start="27335" selection-end="27335" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10440">
-              <folding>
-                <element signature="e#1107#1108#0" expanded="true" />
-                <element signature="e#1136#1137#0" expanded="true" />
-                <element signature="e#1168#1169#0" expanded="true" />
-                <element signature="e#1199#1200#0" expanded="true" />
-              </folding>
+            <state line="690" column="1" selection-start="27335" selection-end="27335" vertical-scroll-proportion="0.0" vertical-offset="15045" max-vertical-offset="16608">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -90,10 +97,8 @@
       <file leaf-file-name="TestDoubleArraySeq.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TestDoubleArraySeq.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="231" column="1" selection-start="8008" selection-end="8008" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3555">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="231" column="1" selection-start="8008" selection-end="8008" vertical-scroll-proportion="0.0" vertical-offset="3693" max-vertical-offset="5616">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -108,17 +113,17 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/DoubleArraySeq.java" />
         <option value="$PROJECT_DIR$/src/DoubleArraySeqTester.java" />
         <option value="$PROJECT_DIR$/src/TestDoubleArraySeq.java" />
+        <option value="$PROJECT_DIR$/src/DoubleArraySeq.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="20" />
-    <option name="y" value="29" />
-    <option name="width" value="1400" />
-    <option name="height" value="860" />
+    <option name="x" value="-2" />
+    <option name="y" value="54" />
+    <option name="width" value="3204" />
+    <option name="height" value="1750" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -146,8 +151,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -182,6 +185,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -196,6 +201,8 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/DoubleArraySeq.java" />
+    <property name="SearchEverywhereHistory" value="" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
@@ -232,19 +239,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -270,6 +264,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -358,24 +365,24 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="20" y="29" width="1400" height="860" extended-state="0" />
+    <frame x="-2" y="54" width="3204" height="1750" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -386,7 +393,7 @@
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USER_GROUPS">
+    <option name="RECENTLY_FILTERED_USERS">
       <collection />
     </option>
   </component>
@@ -406,31 +413,58 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/DoubleArraySeq.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="6" selection-start="2301" selection-end="2301" vertical-scroll-proportion="0.0" vertical-offset="1704" max-vertical-offset="10536">
+          <folding>
+            <element signature="e#14290#14291#0" expanded="true" />
+            <element signature="e#14324#14325#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/DoubleArraySeqTester.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="690" column="1" selection-start="27335" selection-end="27335" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10440">
-          <folding>
-            <element signature="e#1107#1108#0" expanded="true" />
-            <element signature="e#1136#1137#0" expanded="true" />
-            <element signature="e#1168#1169#0" expanded="true" />
-            <element signature="e#1199#1200#0" expanded="true" />
-          </folding>
+        <state line="690" column="1" selection-start="27335" selection-end="27335" vertical-scroll-proportion="0.0" vertical-offset="16560" max-vertical-offset="16704">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TestDoubleArraySeq.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="231" column="1" selection-start="8008" selection-end="8008" vertical-scroll-proportion="0.0" vertical-offset="5544" max-vertical-offset="5688">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TestDoubleArraySeq.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="231" column="1" selection-start="8008" selection-end="8008" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3555">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DoubleArraySeqTester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="690" column="1" selection-start="27335" selection-end="27335" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10440">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/DoubleArraySeq.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="221" column="6" selection-start="8827" selection-end="9115" vertical-scroll-proportion="0.0" vertical-offset="4917" max-vertical-offset="9504">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DoubleArraySeq.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="6" selection-start="2336" selection-end="2336" vertical-scroll-proportion="1.3994744" vertical-offset="0" max-vertical-offset="5700">
-          <folding />
+        <state line="335" column="40" selection-start="11465" selection-end="11465" vertical-scroll-proportion="0.5690897" vertical-offset="7171" max-vertical-offset="13200">
+          <folding>
+            <element signature="e#14290#14291#0" expanded="true" />
+            <element signature="e#14324#14325#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

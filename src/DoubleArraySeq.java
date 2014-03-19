@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * A DoubleArraySeq keeps track of a sequence of double numbers. The sequence
  * can have a special "current element", which is specified and accessed through
@@ -21,11 +23,18 @@ public class DoubleArraySeq implements Cloneable {
      * The default capacity of a newly constructed DoubleArraySeq.
      */
     static int DEFAULT_CAPACITY = 10;
+
     /**
      * A sentinel value used for the current element to indicate that no current
-     * element exists.
+     * element exists.  Set to -1 if there is no current element.
      */
     private static int NO_CURRENT;
+
+    /**
+     * Number of elements in the array
+     */
+    private int numElements = 0;
+
     /**
      * The index of the current element in this sequence
      */
@@ -111,10 +120,10 @@ public class DoubleArraySeq implements Cloneable {
     //Not positive if we need the throws or not...
     public static DoubleArraySeq concatenation(DoubleArraySeq s1, DoubleArraySeq s2) 
                                         throws NullPointerException, OutOfMemoryError {
-        //Throw this I guess??? 
-        if (s1 == null || s2 == null) {
-            throw new NullPointerException(); 
-        } 
+        //Throw this I guess???
+        //Might be an invalid parameter exception
+        if (s1 == null || s2 == null) throw new NullPointerException();
+
         
         //Make a new DoubleArraySeq to return 
         DoubleArraySeq newSeq = new DoubleArraySeq(s1.size() + s2.size());
@@ -129,9 +138,34 @@ public class DoubleArraySeq implements Cloneable {
      * @return the number of elements in this sequence
      */
     public int size() {
-        manyItems = data.length;
+        manyItems = 0;
+        for(int i=0; i<data.length; i++) {
+            if (data[i] != 0.0 )
+                manyItems++;
+        }
         return manyItems;
     }
+
+    /**
+     * This function increases the size of the this.data array and
+     * copies data's current content into the new array.
+     *
+     * The var boostFactor is the factor by which the arrays current
+     * size will be multiplied by
+     *
+     * Should only be called if the array is full or data
+     * loss may occur.
+     *
+     * @return the new array with increased size
+     */
+    private double[] arrayBoost() {
+        int boostFactor = 2;
+        int newSize = data.length * boostFactor;
+        double[] tmp = new double[newSize];
+        System.arraycopy(data, 0, tmp, 0, data.length);
+        data = tmp;
+    }
+
 
     /**
      * Sets the current element at the front of this sequence.
@@ -140,8 +174,12 @@ public class DoubleArraySeq implements Cloneable {
      *                 sequence is now the current element; otherwise, there is
      *                 no current element.
      */
-   public void start() {
-
+    public void start() {
+        if (this.size() > 0) {
+            this.Current(0);
+        } else {
+            this.NoCurrent();
+        }
     }
 
     /**
@@ -175,7 +213,7 @@ public class DoubleArraySeq implements Cloneable {
      *
      * @postcondition: a new copy of the element has been added to this
      *                 sequence. If there was a current element, then this
-     *                 method places the new element before the current element.
+     *                 method places the new element after the current element.
      *                 If there was no current element, then this method places
      *                 the new element at the front of this sequence. The newly
      *                 added element becomes the new current element of this
@@ -186,7 +224,19 @@ public class DoubleArraySeq implements Cloneable {
      *             sequence.
      */
     public void addAfter(double element) {
+        //check to see if there is a current element
+        if(!this.isCurrent()) {
+            //think I should set this
+            this.Current(0);
+        }
 
+        //make sure there is room in the data array.
+        if(this.size() == data.length) this.arrayBoost();
+
+        System.arraycopy(data, currentElement, data, currentElement+1, this.size());
+        //set the current element.
+        currentElement++;
+        data[currentElement] = element;
     }
 
     /**
@@ -209,8 +259,19 @@ public class DoubleArraySeq implements Cloneable {
      *             if there is insufficient memory to increase the capacity of
      *             this sequence.
      */
+    //Question:
+    //Do we want add the whole sequence or do we just want to add values that aren't 0.0?
+    //Just going to access the private data field of the other DoubleArraySeq
+    //TODO: Make sure the increase array sequence size method doesn't crash or anything
     public void addAll(DoubleArraySeq other) {
+        if (other != null) {
+            if (other.size() >= this.data.length || other.data.length >= this.data.length) arrayBoost();
 
+
+
+        } else {
+            throw new NullPointerException();
+        }
     }
 
     /**
@@ -235,8 +296,18 @@ public class DoubleArraySeq implements Cloneable {
      *               the front of this sequence. The newly added element becomes
      *               the new current element of this sequence.
      */
+    //TODO: maybe add to ternary operations to use even LESS lines
     public void addBefore(double element) {
+        //check to see if there is a current element
+        if(!this.isCurrent()) this.Current(0);
 
+        //make sure there is room in the data array.
+        if(this.size() == data.length) this.arrayBoost();
+
+        //much more prettier
+        System.arraycopy(data, currentElement, data, currentElement + 1, this.size());
+        //set the current element.
+        data[currentElement] = element;
     }
 
     /**
@@ -255,14 +326,16 @@ public class DoubleArraySeq implements Cloneable {
         if (this.isCurrent()) {
             //check to see if old current element is at the end of the array
             if (newCur > data.length) {
-                this.setNoCurrent();  
+                this.NoCurrent();
             } else {
                 this.currentElement = newCur; 
             }
         }
     }
 
+    //TODO: figure out what this is for.
     /**
+     *
      * Appends the value in data at the specified index onto the specified
      * StringBuilder.
      *
@@ -295,7 +368,14 @@ public class DoubleArraySeq implements Cloneable {
      *             if this class does not implement Cloneable.
      */
     protected DoubleArraySeq clone() {
+        DoubleArraySeq theCopy = null;
+        try {
+            theCopy = (DoubleArraySeq) super.clone();
+        } catch (CloneNotSupportedException ex) {
+            throw new RuntimeException("This class does not implement the Cloneable interface");
 
+        }
+        return theCopy;
     }
 
     /**
@@ -313,7 +393,9 @@ public class DoubleArraySeq implements Cloneable {
      *             double[minimumCapacity].
      */
     public void ensureCapacity(int minimumCapacity) {
-
+        if (data.length >= minimumCapacity) {
+            throw new OutOfMemoryError("There is no memory left for a new array");
+        }
     }
 
     /**
@@ -324,8 +406,12 @@ public class DoubleArraySeq implements Cloneable {
      * @return true if this object is equal to the other object, false
      *         otherwise.
      */
+    //TODO: this needs to check the object type
     public boolean equals(Object other) {
-
+        if(data == other){
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -339,7 +425,7 @@ public class DoubleArraySeq implements Cloneable {
      *             if there is no current element.
      */
     public int getCapacity() {
-
+        return data.length;
     }
 
     /**
@@ -351,7 +437,7 @@ public class DoubleArraySeq implements Cloneable {
      */
     public boolean isCurrent() {
         boolean currentExists = true; 
-        if (NO_CURRENT <= 0) {
+        if (NO_CURRENT < 0) {
             currentExists = false; 
         }
         return currentExists;
@@ -374,8 +460,9 @@ public class DoubleArraySeq implements Cloneable {
 
         if (!this.isCurrent()) {
             throw new IllegalStateException(); 
+        } else {
+            System.arraycopy(data,currentElement,data,currentElement-1,currentElement-getCapacity());
         }
-
     }
 
     /**
@@ -393,7 +480,24 @@ public class DoubleArraySeq implements Cloneable {
      * @return a String representation of this sequence
      */
     public String toString() {
+        String st ="";
+        if(data == null){
+            st = "<>";
+        } else{
+            for(int i =0; i<data.length; i++){
+                if(i == currentElement){
+                    st+= "[" + data[i] + "}";
+                }
+                else{
+                    st += "<" + data[i] + ">";
 
+                }
+                if(i<data.length){
+                    st += ", ";
+                }
+            }
+        }
+        return st;
     }
 
     /**
@@ -407,16 +511,34 @@ public class DoubleArraySeq implements Cloneable {
      *             if there is insufficient memory for altering the capacity.
      */
     public void trimToSize() {
-
+        try{
+            //this needs to be fixed
+            double[] datanew = new double[currentElement];
+            System.arraycopy(data,0,datanew,0,currentElement);
+            data = datanew;
+        }catch(OutOfMemoryError er){
+            System.out.println(er.getMessage());
+        }
     }
-
 
     /**
      * Sets the NO_CURRENT value to indicate that there is there is no 
-     * current value selected.  0 inicates there is no current value.
+     * current value selected.  -1 inicates there is no current value.
      * 
      */
-    private void setNoCurrent() {
-        this.NO_CURRENT = 0; 
+    private void NoCurrent() {
+        this.NO_CURRENT = -1;
+    }
+
+    /**
+     * Sets the currentElement to the index of the new current element,
+     * and sets the NO_CURRENT value to indicate that there is a current
+     * value.
+     *
+     * @param curIndex new current element index
+     */
+    private void Current(int curIndex) {
+        this.currentElement = curIndex;
+        this.NO_CURRENT = 1;
     }
 }
