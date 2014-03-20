@@ -130,6 +130,9 @@ public class DoubleArraySeq implements Cloneable {
         DoubleArraySeq newSeq = new DoubleArraySeq(s1.size() + s2.size());
         newSeq.addAll(s1);
         newSeq.addAll(s2);
+        newSeq.manyItems= s1.manyItems+s2.manyItems;
+        newSeq.numElements= s1.numElements+s2.numElements;
+        newSeq.NoCurrent();
         return newSeq;
     }
 
