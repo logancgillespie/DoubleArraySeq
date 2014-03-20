@@ -196,7 +196,7 @@ public class DoubleArraySeq implements Cloneable {
     //TODO: fix or check 
     public double getCurrent() throws IllegalStateException {
 
-        if (!this.isCurrent()) {
+        if (currentElement < 0) {
             throw new IllegalStateException();
         }
 
@@ -290,7 +290,7 @@ public class DoubleArraySeq implements Cloneable {
         if (other != null) {
             //make sure this data array is large enough
             while (other.size() >= this.data.length ) arrayBoost();
-            System.arraycopy(other.data, 0, this.data, this.numElements, this.size()+other.size());
+            System.arraycopy(other.data, 0, this.data, 0, other.size());
             manyItems= manyItems+other.size();
 
         } else {
@@ -322,17 +322,43 @@ public class DoubleArraySeq implements Cloneable {
      */
     //TODO: maybe add to ternary operations to use even LESS lines
     public void addBefore(double element) {
-        //check to see if there is a current element
-        if(!this.isCurrent()) this.Current(0);
-
         //make sure there is room in the data array.
-        if(this.size() == data.length) this.arrayBoost();
+        if (this.size() == data.length) {
+            this.arrayBoost();
+        }
 
-        //much more prettier
-        System.arraycopy(data, currentElement, data, currentElement + 1, this.size());
-        //set the current element.
-        data[currentElement] = element;
+        //check to see if there is a current element
+        if (this.size() <= 0) {
+            //think I should set this
+            this.Current(0);
+            data[currentElement] = element;
+
+            //debugging
+            //System.out.println("\nFIRST THE SIZE: "+this.size()+"\n");
+
+        } else {
+
+            if (!this.isCurrent()) {
+                //debuggings
+                //System.out.println("\nSEC THE SIZE: "+this.size()+"\n");
+
+                data[this.size()] = element;
+                currentElement = this.size();
+            } else {
+                //changed to -11
+
+                //debugging
+                //System.out.println("\nLAST THE SIZE: "+ this.size() + " " + this.isCurrent() + "\n");
+
+                System.arraycopy(data, currentElement, data, currentElement + 1, this.size());
+                //currentElement--;
+                data[currentElement] = element;
+            }
+        }
+
         numElements++;
+        //set the current element.
+
     }
 
     /**
@@ -405,11 +431,10 @@ public class DoubleArraySeq implements Cloneable {
         DoubleArraySeq theCopy;
         try {
             theCopy = (DoubleArraySeq) super.clone();
-            theCopy = new DoubleArraySeq(getCapacity());
-            System.arraycopy(data,0,theCopy.data,0,data.length);
-            theCopy.numElements = numElements;
-            theCopy.manyItems = manyItems;
-            theCopy.currentElement = currentElement-1;
+            //System.arraycopy(data,0,theCopy.data,0,data.length);
+            theCopy.numElements = this.numElements;
+            theCopy.manyItems = this.manyItems;
+            theCopy.currentElement = this.currentElement;
         } catch (CloneNotSupportedException ex) {
             throw new RuntimeException("This class does not implement the Cloneable interface");
         }
