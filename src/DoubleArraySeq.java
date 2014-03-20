@@ -290,8 +290,9 @@ public class DoubleArraySeq implements Cloneable {
         if (other != null) {
             //make sure this data array is large enough
             while (other.size() >= this.data.length ) arrayBoost();
-            System.arraycopy(other.data, 0, this.data, this.numElements, other.size());
+            System.arraycopy(other.data, 0, this.data, this.numElements, this.size()+other.size());
             manyItems= manyItems+other.size();
+
         } else {
             throw new NullPointerException();
         }
