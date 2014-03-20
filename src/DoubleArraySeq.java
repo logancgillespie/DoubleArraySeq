@@ -405,7 +405,8 @@ public class DoubleArraySeq implements Cloneable {
         DoubleArraySeq theCopy;
         try {
             theCopy = (DoubleArraySeq) super.clone();
-            System.arraycopy(data,1,theCopy.data,0,data.length-1);
+            theCopy = new DoubleArraySeq(getCapacity());
+            System.arraycopy(data,0,theCopy.data,0,data.length);
             theCopy.numElements = numElements;
             theCopy.manyItems = manyItems;
             theCopy.currentElement = currentElement-1;

@@ -69,10 +69,10 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="DoubleArraySeq.java" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="DoubleArraySeq.java" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/DoubleArraySeq.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="294" column="0" selection-start="9828" selection-end="9828" vertical-scroll-proportion="0.5220126" vertical-offset="4161" max-vertical-offset="9000">
+                <state line="408" column="62" selection-start="13948" selection-end="13948" vertical-scroll-proportion="-1.998012" vertical-offset="7125" max-vertical-offset="9015">
                   <folding />
                 </state>
               </provider>
@@ -94,25 +94,25 @@
           <file leaf-file-name="DoubleArraySeq.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/DoubleArraySeq.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="580" column="27" selection-start="19514" selection-end="19524" vertical-scroll-proportion="-14.807693" vertical-offset="8285" max-vertical-offset="9000">
+                <state line="581" column="27" selection-start="19569" selection-end="19579" vertical-scroll-proportion="0.0" vertical-offset="8715" max-vertical-offset="9045">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="DoubleArraySeqOld.java" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="DoubleArraySeqOld.java" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/DoubleArraySeqOld.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="233" column="27" selection-start="7635" selection-end="7635" vertical-scroll-proportion="0.0" vertical-offset="5310" max-vertical-offset="8385">
+                <state line="269" column="46" selection-start="8978" selection-end="9095" vertical-scroll-proportion="0.0" vertical-offset="4035" max-vertical-offset="8415">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="DoubleArraySeqTester.java" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="DoubleArraySeqTester.java" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/DoubleArraySeqTester.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="339" column="0" selection-start="13146" selection-end="13146" vertical-scroll-proportion="0.46875" vertical-offset="4800" max-vertical-offset="10380">
+                <state line="339" column="0" selection-start="13146" selection-end="13146" vertical-scroll-proportion="0.0" vertical-offset="5085" max-vertical-offset="10440">
                   <folding />
                 </state>
               </provider>
@@ -428,11 +428,15 @@
       <created>1395315340877</created>
       <updated>1395315340877</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="bug fixes">
+      <created>1395315846959</created>
+      <updated>1395315846959</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="874" extended-state="0" />
+    <frame x="0" y="22" width="1440" height="874" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -485,6 +489,62 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/TestDoubleArraySeq.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="231" column="1" selection-start="8008" selection-end="8008" vertical-scroll-proportion="0.0" vertical-offset="3465" max-vertical-offset="3555">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DoubleArraySeq.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="580" column="27" selection-start="19514" selection-end="19524" vertical-scroll-proportion="0.0" vertical-offset="8700" max-vertical-offset="9030">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DoubleArraySeqOld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="269" column="46" selection-start="8978" selection-end="9095" vertical-scroll-proportion="0.0" vertical-offset="4035" max-vertical-offset="8415">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DoubleArraySeqTester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="339" column="0" selection-start="13146" selection-end="13146" vertical-scroll-proportion="0.0" vertical-offset="5085" max-vertical-offset="10440">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TestDoubleArraySeq.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="231" column="1" selection-start="8008" selection-end="8008" vertical-scroll-proportion="0.0" vertical-offset="3465" max-vertical-offset="3555">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DoubleArraySeq.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="580" column="27" selection-start="19514" selection-end="19524" vertical-scroll-proportion="0.0" vertical-offset="8700" max-vertical-offset="9030">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DoubleArraySeqOld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="269" column="46" selection-start="8978" selection-end="9095" vertical-scroll-proportion="0.0" vertical-offset="4035" max-vertical-offset="8415">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DoubleArraySeqTester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="339" column="0" selection-start="13146" selection-end="13146" vertical-scroll-proportion="0.0" vertical-offset="5085" max-vertical-offset="10440">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/TestDoubleArraySeq.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="231" column="1" selection-start="8008" selection-end="8008" vertical-scroll-proportion="0.0" vertical-offset="3465" max-vertical-offset="3555">
@@ -765,23 +825,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DoubleArraySeqOld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="233" column="27" selection-start="7635" selection-end="7635" vertical-scroll-proportion="0.0" vertical-offset="5310" max-vertical-offset="8385">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DoubleArraySeqTester.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="339" column="0" selection-start="13146" selection-end="13146" vertical-scroll-proportion="0.46875" vertical-offset="4800" max-vertical-offset="10380">
+        <state line="339" column="0" selection-start="13146" selection-end="13146" vertical-scroll-proportion="0.0" vertical-offset="4800" max-vertical-offset="10380">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DoubleArraySeq.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="294" column="0" selection-start="9828" selection-end="9828" vertical-scroll-proportion="0.5220126" vertical-offset="4161" max-vertical-offset="9000">
+        <state line="581" column="27" selection-start="19569" selection-end="19579" vertical-scroll-proportion="0.0" vertical-offset="8715" max-vertical-offset="9045">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DoubleArraySeqOld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="269" column="46" selection-start="8978" selection-end="9095" vertical-scroll-proportion="0.0" vertical-offset="4035" max-vertical-offset="8415">
           <folding />
         </state>
       </provider>
