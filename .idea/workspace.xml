@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a0a15b84-e0e5-4273-8623-e9d57a1b2a62" name="Default" comment="bug fixes">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DoubleArraySeq.java" afterPath="$PROJECT_DIR$/src/DoubleArraySeq.java" />
@@ -72,7 +75,7 @@
           <file leaf-file-name="DoubleArraySeq.java" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/DoubleArraySeq.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="540" column="26" selection-start="18149" selection-end="18149" vertical-scroll-proportion="0.5534591" vertical-offset="7836" max-vertical-offset="9435">
+                <state line="488" column="8" selection-start="18527" selection-end="18527" vertical-scroll-proportion="0.3710692" vertical-offset="7143" max-vertical-offset="7620">
                   <folding />
                 </state>
               </provider>
@@ -82,19 +85,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="DoubleArraySeq.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/DoubleArraySeq.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="502" column="25" selection-start="16899" selection-end="16899" vertical-scroll-proportion="-6.6923075" vertical-offset="7356" max-vertical-offset="9435">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="DoubleArraySeqTester.java" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/DoubleArraySeqTester.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="340" column="22" selection-start="13169" selection-end="13169" vertical-scroll-proportion="-6.11332" vertical-offset="8115" max-vertical-offset="10380">
+                <state line="377" column="36" selection-start="14693" selection-end="14693" vertical-scroll-proportion="8.419483" vertical-offset="1360" max-vertical-offset="10380">
                   <folding />
                 </state>
               </provider>
@@ -118,12 +112,12 @@
         <option value="$PROJECT_DIR$/src/DoubleArraySeqTester.java" />
         <option value="$PROJECT_DIR$/src/TestDoubleArraySeq.java" />
         <option value="$PROJECT_DIR$/src/DoubleArraySeqOld.java" />
+        <option value="$PROJECT_DIR$/src/DoubleArraySeqDoc.java" />
         <option value="$PROJECT_DIR$/src/DoubleArraySeq.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="3" />
     <option name="y" value="22" />
     <option name="width" value="1440" />
     <option name="height" value="874" />
@@ -155,6 +149,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -189,7 +184,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -441,11 +435,15 @@
       <created>1395359682276</created>
       <updated>1395359682276</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="bug fixes">
+      <created>1395365722081</created>
+      <updated>1395365722081</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="3" y="22" width="1440" height="874" extended-state="6" />
+    <frame x="0" y="22" width="1440" height="874" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -453,6 +451,7 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -465,11 +464,10 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24305555" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3242236" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
@@ -499,13 +497,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/DoubleArraySeqTester.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="275" column="27" selection-start="0" selection-end="27335" vertical-scroll-proportion="0.0" vertical-offset="4125" max-vertical-offset="10380">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DoubleArraySeq.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="516" column="25" selection-start="17215" selection-end="17215" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="9450">
@@ -837,21 +828,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TestDoubleArraySeq.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="231" column="1" selection-start="8008" selection-end="8008" vertical-scroll-proportion="0.0" vertical-offset="2392" max-vertical-offset="3555">
+        <state line="231" column="1" selection-start="8008" selection-end="8008" vertical-scroll-proportion="1.1491053" vertical-offset="2842" max-vertical-offset="3510">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DoubleArraySeqTester.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="340" column="22" selection-start="13169" selection-end="13169" vertical-scroll-proportion="-6.11332" vertical-offset="8115" max-vertical-offset="10380">
+        <state line="377" column="36" selection-start="14693" selection-end="14693" vertical-scroll-proportion="8.419483" vertical-offset="1360" max-vertical-offset="10380">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DoubleArraySeq.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="540" column="26" selection-start="18149" selection-end="18149" vertical-scroll-proportion="0.5534591" vertical-offset="7836" max-vertical-offset="9435">
+        <state line="488" column="8" selection-start="18527" selection-end="18527" vertical-scroll-proportion="0.3710692" vertical-offset="7143" max-vertical-offset="7620">
           <folding />
         </state>
       </provider>
