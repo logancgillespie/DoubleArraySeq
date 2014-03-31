@@ -1,6 +1,6 @@
 import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 /**
@@ -8,20 +8,20 @@ import java.util.StringTokenizer;
  * public methods of class <code>DoubleArraySeq</code> using a console menu.
  * When the program pauses, the user should enter one of the following with
  * one that is appropriate dependent on the context:
- * <p>
+ * <p/>
  * <ul>
- *          <li>a single integer menu choice</li>
- *          <li>a single double value</li>
- *          <li>several double values separated by blanks</li>
+ * <li>a single integer menu choice</li>
+ * <li>a single double value</li>
+ * <li>several double values separated by blanks</li>
  * </ul>
  * Exceptions <code>IllegalArgumentException</code> and
  * <code>IllegalStateException</code> are caught by the <code>main</code>
  * method.  No other exceptions are caught.
- * <p>
+ * <p/>
  * The <code>DoubleArraySeq</code> methods <code>clone</code>,
  * <code>size</code>, and <code>getCapacity</code> are implicitly tested by the
  * <code>display</code> method.
- * <p>
+ * <p/>
  * The original version of this file was downloaded from:
  * http://ctas.east.asu.edu/millard/CET230/proj/proj2/TestDoubleArraySeq.java
  *
@@ -30,33 +30,63 @@ import java.util.StringTokenizer;
  * @version 25 February
  */
 public class TestDoubleArraySeq {
-    private BufferedReader stdin  = new BufferedReader(
+    private BufferedReader stdin = new BufferedReader(
             new InputStreamReader(System.in));
 
     public void runTests() throws IOException {
-        DoubleArraySeq seq  = new DoubleArraySeq();
-        boolean        done = false;
+        DoubleArraySeq seq = new DoubleArraySeq();
+        boolean done = false;
 
         display("seq", seq);
 
         while (!done) {
             try {
                 switch (getMenuChoice()) {
-                    case  0: done = true;              break;
-                    case  1: seq = newDASeq();         break;
-                    case  2: testAddAfter(seq);        break;
-                    case  3: testAddBefore(seq);       break;
-                    case  4: seq.removeCurrent();      break;
-                    case  5: testIsCurrent(seq);       break;
-                    case  6: testGetCurrent(seq);      break;
-                    case  7: seq.start();              break;
-                    case  8: seq.advance();            break;
-                    case  9: seq.trimToSize();         break;
-                    case 10: testEnsureCapacity(seq);  break;
-                    case 11: testAddAll(seq);          break;
-                    case 12: testConcatenation(seq);   break;
-                    case 13: testToString(seq);        break;
-                    case 14: testEquals(seq);          break;
+                    case 0:
+                        done = true;
+                        break;
+                    case 1:
+                        seq = newDASeq();
+                        break;
+                    case 2:
+                        testAddAfter(seq);
+                        break;
+                    case 3:
+                        testAddBefore(seq);
+                        break;
+                    case 4:
+                        seq.removeCurrent();
+                        break;
+                    case 5:
+                        testIsCurrent(seq);
+                        break;
+                    case 6:
+                        testGetCurrent(seq);
+                        break;
+                    case 7:
+                        seq.start();
+                        break;
+                    case 8:
+                        seq.advance();
+                        break;
+                    case 9:
+                        seq.trimToSize();
+                        break;
+                    case 10:
+                        testEnsureCapacity(seq);
+                        break;
+                    case 11:
+                        testAddAll(seq);
+                        break;
+                    case 12:
+                        testConcatenation(seq);
+                        break;
+                    case 13:
+                        testToString(seq);
+                        break;
+                    case 14:
+                        testEquals(seq);
+                        break;
                 }
             } catch (IllegalArgumentException e1) {
                 System.out.println();
@@ -74,9 +104,9 @@ public class TestDoubleArraySeq {
 
 
     private void display(String label, DoubleArraySeq seq) {
-        DoubleArraySeq temp       = seq.clone();
-        int            currPos    = posOfCurrent(seq.clone());
-        String         outElement;
+        DoubleArraySeq temp = seq.clone();
+        int currPos = posOfCurrent(seq.clone());
+        String outElement;
 
         System.out.println();
         System.out.print(label + ": {");
@@ -164,7 +194,7 @@ public class TestDoubleArraySeq {
 
     private void testGetCurrent(DoubleArraySeq seq) {
         System.out.println();
-        System.out.println(  "Current element: "
+        System.out.println("Current element: "
                 + Double.toString(seq.getCurrent()));
     }
 
@@ -191,7 +221,7 @@ public class TestDoubleArraySeq {
 
     private void testConcatenation(DoubleArraySeq s1) throws IOException {
         StringTokenizer st;
-        DoubleArraySeq  s2 = new DoubleArraySeq();
+        DoubleArraySeq s2 = new DoubleArraySeq();
 
         display("s1", s1);
         System.out.println();
