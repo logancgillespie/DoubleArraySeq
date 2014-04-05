@@ -1,3 +1,5 @@
+import java.lang.IllegalStateException;
+
 /**
  * @author Logan Gillespie
  * @version 1.5
@@ -39,20 +41,43 @@ public class DoubleLinkedSeq implements Sequence {
             manyNodes++;
             cursor = head;
             precursor = head;
-            //tail = head.getNext();
+            tail = head;
         } else {
             DoubleNode temp;
             if (isCurrent()) {
                 temp = new DoubleNode(element, cursor);
-                //precursor = temp;
-                precursor.setNext(temp);
-
+                if (cursor.getData() == head.getData()) {
+                    head = temp;
+                    cursor = head;
+                    precursor = head;
+                    tail = head.getNext();
+                } else {
+                    temp.setNext(precursor.getNext());
+                    precursor.setNext(temp);
+                    cursor = temp;
+                }
             } else {
                 temp = new DoubleNode(element, null);
-                head.addNodeAfter(element);
-                cursor = head.getNext();
-                cursor = head;
-                //precursor = cursor;
+                //temp = new DoubleNode(element, cursor);
+                if (cursor == null) {
+                    cursor = head;
+                    precursor = temp;
+                    temp.setNext(cursor);
+                    //cursor.setNext(cursor.getNext());
+                    head = temp;
+                    //cursor;
+                    //head.setNext(cursor.getNext());
+                    //precursor = head;
+                    cursor = precursor;
+
+                } else {
+                    temp = new DoubleNode(element, null);
+                    head.addNodeAfter(element);
+                    //head.setNext(null);
+                    cursor = head.getNext();
+                    cursor = head;
+                    //precursor = cursor;
+                }
             }
             manyNodes++;
         }
@@ -76,13 +101,12 @@ public class DoubleLinkedSeq implements Sequence {
                 cursor = temp;
                 tail = cursor;
             } else {
-                //temp = new DoubleNode(element, null);
-
                 tail.getNext().addNodeAfter(element);
                 cursor = tail.getNext().getNext();
                 tail = cursor.getNext();
                 precursor = null;
             }
+
             manyNodes++;
         }
     }
@@ -95,7 +119,6 @@ public class DoubleLinkedSeq implements Sequence {
     @Override
     public void advance() {
         if (isCurrent()) {
-
             if (cursor.getNext() == null) {
                 precursor = cursor;
                 cursor = null;
@@ -112,8 +135,10 @@ public class DoubleLinkedSeq implements Sequence {
     public double getCurrent() {
         if (isCurrent()) {
             return cursor.getData();
+        } else {
+            throw new IllegalStateException("No current item");
         }
-        return 0;
+        //return 0;
     }
 
     @Override
@@ -123,6 +148,18 @@ public class DoubleLinkedSeq implements Sequence {
 
     @Override
     public void removeCurrent() {
+        if (isCurrent()) {
+            if (precursor == head) {
+                head.setNext(cursor);
+            } else {
+                precursor.setNext(cursor.getNext());
+            }
+            // cursor.setNext(precursor.getNext().getNext());
+            manyNodes--;
+            //cursor = precursor;
+        } else {
+            throw new IllegalStateException("no current element");
+        }
 
     }
 
@@ -142,6 +179,16 @@ public class DoubleLinkedSeq implements Sequence {
     @Override
     public Sequence clone() {
         Sequence theCopy = null;
+        try {
+            theCopy = (Sequence) super.clone();
+            DoubleNode tmp = head;
+            while (tmp != null) {
+                // theCopy.;
+                tmp.setNext(tmp.getNext());
+            }
+        } catch (CloneNotSupportedException er) {
+            System.out.println("Not cloneable");
+        }
         return theCopy;
     }
 
@@ -149,17 +196,16 @@ public class DoubleLinkedSeq implements Sequence {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("<");
-
         if (manyNodes > 0) {
-            if (isCurrent() && head.getData() == cursor.getData() && head
-                    .getData() != 0) {
+            if (isCurrent() && head.getData() == cursor.getData()) {
                 sb.append("[");
                 sb.append(head.getData());
                 sb.append("]");
             } else {
                 sb.append(head.getData());
             }
-            for (DoubleNode i = head.getNext(); i != null; i = i.getNext()) {
+            for (DoubleNode i = head.getNext(); i != null; i = i.getNext
+                    ()) {
                 if (i == cursor) {
                     sb.append(", ").append("[");
                     sb.append(i.getData());
