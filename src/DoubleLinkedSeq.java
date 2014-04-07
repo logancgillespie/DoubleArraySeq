@@ -58,25 +58,18 @@ public class DoubleLinkedSeq implements Sequence {
                 }
             } else {
                 temp = new DoubleNode(element, null);
-                //temp = new DoubleNode(element, cursor);
                 if (cursor == null) {
                     cursor = head;
                     precursor = temp;
                     temp.setNext(cursor);
-                    //cursor.setNext(cursor.getNext());
                     head = temp;
-                    //cursor;
-                    //head.setNext(cursor.getNext());
-                    //precursor = head;
                     cursor = precursor;
 
                 } else {
-                    temp = new DoubleNode(element, null);
+                    // temp = new DoubleNode(element, null);
                     head.addNodeAfter(element);
-                    //head.setNext(null);
                     cursor = head.getNext();
                     cursor = head;
-                    //precursor = cursor;
                 }
             }
             manyNodes++;
@@ -180,13 +173,9 @@ public class DoubleLinkedSeq implements Sequence {
     public Sequence clone() {
         Sequence theCopy = null;
         try {
-            theCopy = (Sequence) super.clone();
-            DoubleNode tmp = head;
-            while (tmp != null) {
-                // theCopy.;
-                tmp.setNext(tmp.getNext());
-            }
-        } catch (CloneNotSupportedException er) {
+            theCopy = (Sequence) new DoubleNode(0, null);
+            theCopy.addAll(this);
+        } catch (RuntimeException er) {
             System.out.println("Not cloneable");
         }
         return theCopy;
@@ -222,7 +211,24 @@ public class DoubleLinkedSeq implements Sequence {
     }
 
     public boolean equals(Object other) {
-        return true;
+        boolean result = false;
+        if (!(other instanceof Sequence)) {
+            result = false;
+        }
+        if (other == null) {
+            result = false;
+        }
+        if (((DoubleNode) other).getData() == this.cursor.getData()) {
+            for (int i = 0; i < manyNodes; i++) {
+                if (((Sequence) other).getCurrent() != this.getCurrent()) {
+                    result = false;
+                }
+                ((Sequence) other).advance();
+                this.advance();
+            }
+
+        }
+        return result;
     }
 
     private void appendItem(StringBuilder sb, DoubleNode node) {
