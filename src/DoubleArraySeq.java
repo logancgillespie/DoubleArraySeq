@@ -33,7 +33,7 @@
  * @author Robert (Matt) Anger
  * @version 1.2
  */
-public class DoubleArraySeq implements Cloneable {
+public class DoubleArraySeq implements Sequence {
 
  /* Invariant of the DoubleArraySeq class:
      *   1. The number of elements in the sequences is in the instance variable
@@ -151,22 +151,22 @@ public class DoubleArraySeq implements Cloneable {
     }
 
     /**
-     * This function increases the size of the this.data array and
-     * copies data's current content into the new array.
-     * <p/>
-     * The var boostFactor is the factor by which the arrays current size
-     * will be multiplied by
-     * <p/>
-     * Should only be called if the array is full or data loss may occur.
+     * This function returns and element a specified index
+     *
+     * @param index position of element to be retrieved
+     * @return double element from array
+     * @throws NullPointerException if the index is not inside 
+     *                              the array bounds
      */
-    private void arrayBoost() {
-        int boostFactor = 2;
-        int newSize = data.length * boostFactor + 1;
-        double[] tmp = new double[newSize];
-        System.arraycopy(data, 0, tmp, 0, manyItems);
-        data = tmp;
+    public double get(int index) {
+        double element;
+        if (index < this.size()) {
+            element = this.data[index];
+        } else {
+            throw new NullPointerException("Index is out of bounds!");
+        }
+        return element; 
     }
-
 
     /**
      * Sets the current element at the front of this sequence.
@@ -214,9 +214,7 @@ public class DoubleArraySeq implements Cloneable {
      * The newly added element becomes the new current element of this sequence.
      */
     public void addAfter(double element) throws OutOfMemoryError {
-        if (this.size() + 1 > data.length) {
-            this.arrayBoost();
-        }
+        this.ensureCapacity(this.size() + 1); 
         if (this.size() <= 0) {
             currentElement = 0;
             data[currentElement] = element;
@@ -253,14 +251,25 @@ public class DoubleArraySeq implements Cloneable {
      * element of this sequence remains where it was, and <code>other</code>
      * is  unchanged.
      */
-    public void addAll(DoubleArraySeq other) {
+    public void addAll(Sequence other) {
         if (other != null) {
-            if (other.size() > this.data.length - this.size()) {
-                this.arrayBoost();
+            this.ensureCapacity(other.size() + this.size());
+            //Easy copy if the objects are the same.  
+            if (other instanceof DoubleArraySeq) {
+                //probably don't need this.
+                //mainly for testing
+                int oSize = other.size();
+                //Temp reference to other as a DoubleArraySeq 
+                DoubleArraySeq tmp = (DoubleArraySeq) other;
+                System.arraycopy(tmp.data, 0, this.data,
+                        this.manyItems, oSize);
+
+            } else {
+                //we'll do something?
+                System.out.println("Trying to add DoubleLinkedSeq, no dice"); 
             }
-            System.arraycopy(other.data, 0, this.data, this.manyItems,
-                    other.manyItems);
-            manyItems = other.manyItems + manyItems;
+
+            manyItems = other.size() + manyItems;
         } else {
             throw new NullPointerException("DoubleArraySeq parameter is null");
         }
@@ -283,9 +292,7 @@ public class DoubleArraySeq implements Cloneable {
      * this sequence.
      */
     public void addBefore(double element) {
-        if (this.size() == data.length) {
-            this.arrayBoost();
-        }
+        this.ensureCapacity(this.size() + 1); 
         if (this.size() <= 0) {
             currentElement = 0;
             data[currentElement] = element;
@@ -342,7 +349,7 @@ public class DoubleArraySeq implements Cloneable {
      * @throws RuntimeException if this class does not implement Cloneable.
      */
     @Override
-    protected DoubleArraySeq clone() {
+    public Sequence clone() {
         DoubleArraySeq theCopy;
         try {
             theCopy = (DoubleArraySeq) super.clone();
@@ -353,6 +360,7 @@ public class DoubleArraySeq implements Cloneable {
         }
         return theCopy;
     }
+
 
     /**
      * Change the current capacity of this sequence to be at least the specified
@@ -366,10 +374,11 @@ public class DoubleArraySeq implements Cloneable {
      * least minimumCapacity, but no less than size.
      */
     public void ensureCapacity(int minimumCapacity) {
+        int factor = 2; 
         try {
             if (data.length < minimumCapacity) {
 
-                double[] tmp = new double[minimumCapacity];
+                double[] tmp = new double[minimumCapacity * factor];
                 System.arraycopy(data, 0, tmp, 0, this.size());
                 data = tmp;
             }
