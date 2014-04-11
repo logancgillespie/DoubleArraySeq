@@ -104,8 +104,8 @@ public class DoubleLinkedSeq implements Sequence {
                                                 DoubleLinkedSeq s2) {
         DoubleLinkedSeq temp = new DoubleLinkedSeq();
         if (s1 != null || s2 != null) {
-            DoubleNode[] tmp = s2.head.listCopyWithTail(s2.head);
-            DoubleNode[] tmp1 = s1.head.listCopyWithTail(s1.head);
+            DoubleNode[] tmp = DoubleNode.listCopyWithTail(s2.head);
+            DoubleNode[] tmp1 = DoubleNode.listCopyWithTail(s1.head);
             temp.head = tmp1[0];
             temp.tail = tmp1[1];
             temp.tail.setNext(tmp[0]);
@@ -361,7 +361,7 @@ public class DoubleLinkedSeq implements Sequence {
         DoubleLinkedSeq theCopy = null;
         try {
             theCopy = (DoubleLinkedSeq) super.clone();
-            DoubleNode[] tmp = this.head.listCopyWithTail(this.head);
+            DoubleNode[] tmp = DoubleNode.listCopyWithTail(this.head);
             theCopy.head = tmp[0];
             theCopy.tail = tmp[1];
 

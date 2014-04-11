@@ -478,7 +478,7 @@ public class DoubleArraySeq implements Sequence {
         } else {
             for (int i = 0; i < manyItems; i++) {
                 if (i == currentElement) {
-                    sb.append("[" + data[i] + "]");
+                    sb.append("[").append(data[i]).append("]");
                 } else {
                     sb.append(data[i]);
                 }
