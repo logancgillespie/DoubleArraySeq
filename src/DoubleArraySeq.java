@@ -213,7 +213,7 @@ public class DoubleArraySeq implements Sequence {
      * then this method places the new element at the end of this sequence.
      * The newly added element becomes the new current element of this sequence.
      */
-    public void addAfter(double element) throws OutOfMemoryError {
+    public void addAfter(double element) {
         this.ensureCapacity(this.size() + 1); 
         if (this.size() <= 0) {
             currentElement = 0;
@@ -254,19 +254,13 @@ public class DoubleArraySeq implements Sequence {
     public void addAll(Sequence other) {
         if (other != null) {
             this.ensureCapacity(other.size() + this.size());
-            //Easy copy if the objects are the same.  
             if (other instanceof DoubleArraySeq) {
-                //probably don't need this.
-                //mainly for testing
                 int oSize = other.size();
                 //Temp reference to other as a DoubleArraySeq 
                 DoubleArraySeq tmp = (DoubleArraySeq) other;
                 System.arraycopy(tmp.data, 0, this.data,
                         this.manyItems, oSize);
 
-            } else {
-                //we'll do something?
-                System.out.println("Trying to add DoubleLinkedSeq, no dice"); 
             }
 
             manyItems = other.size() + manyItems;
@@ -350,13 +344,15 @@ public class DoubleArraySeq implements Sequence {
      */
     @Override
     public Sequence clone() {
-        DoubleArraySeq theCopy;
+        DoubleArraySeq theCopy = null;
         try {
             theCopy = (DoubleArraySeq) super.clone();
             theCopy.data = data.clone();
         } catch (CloneNotSupportedException ex) {
             throw new RuntimeException("This class does not implement the " +
                     "Cloneable interface");
+        } catch (OutOfMemoryError ex) {
+            System.out.println(ex.getMessage());
         }
         return theCopy;
     }
@@ -395,7 +391,7 @@ public class DoubleArraySeq implements Sequence {
      */
     @Override
     public boolean equals(Object other) {
-        boolean result;
+        boolean result = true;
         if (other == null) {
             result = false;
         }
@@ -408,11 +404,10 @@ public class DoubleArraySeq implements Sequence {
                     result = false;
                 }
             }
-        } else {
-            result = false;
         }
         result = (this.currentElement == ((DoubleArraySeq) other)
                 .currentElement);
+
         return result;
     }
 
@@ -455,9 +450,7 @@ public class DoubleArraySeq implements Sequence {
                 this.currentElement = NO_CURRENT;
             } else {
                 System.arraycopy(data, currentElement + 1, data,
-                        currentElement, this.getCapacity() - currentElement -
-                                1
-                );
+                        currentElement, this.getCapacity() - currentElement - 1);
                 manyItems--;
             }
         }
@@ -478,24 +471,24 @@ public class DoubleArraySeq implements Sequence {
      */
     @Override
     public String toString() {
-        String st = "";
+        StringBuilder sb = new StringBuilder();
+        sb.append("<");
         if (data == null || manyItems == 0) {
-            st = "<>";
+            sb.append(">");
         } else {
-            st += "<";
             for (int i = 0; i < manyItems; i++) {
                 if (i == currentElement) {
-                    st += "[" + data[i] + "]";
+                    sb.append("[" + data[i] + "]");
                 } else {
-                    st += data[i];
+                    sb.append(data[i]);
                 }
                 if (i < manyItems - 1) {
-                    st += ", ";
+                    sb.append(", ");
                 }
             }
-            st += ">";
+            sb.append(">");
         }
-        return st;
+        return sb.toString();
     }
 
     /**

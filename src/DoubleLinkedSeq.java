@@ -354,8 +354,7 @@ public class DoubleLinkedSeq implements Sequence {
      * not affect the original, nor vice versa.
      * @throws java.lang.CloneNotSupportedException if the object isn't
      *                                              cloneable
-     * @throws RuntimeException                     if this class does not
-     *                                              implement Cloneable.
+     * @throws RuntimeException if this class does not implement Cloneable.
      */
     @Override
     public Sequence clone() {
